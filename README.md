@@ -144,8 +144,7 @@ The polynomial rolling hash is chosen because:
 * It is efficient (O(n))
 * Easy to implement without libraries
 * Provides good distribution of values
-* Suitable for demonstrating hashing concepts
-
+* Easy to use , same as DSA
 ---
 
 ## Message Authentication Flow(TYPE A)
