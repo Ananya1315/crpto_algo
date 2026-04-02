@@ -84,10 +84,11 @@ int main() {
         cin >> choice;
         cin.ignore(); 
 
-        switch (choice) {
+        switch (choice) 
+        {
 
-            // 🔐 ENCRYPTION WITH CONCATENATION
-            case 1: {
+            case 1: 
+            {
                 cout << "\nINPUT: ";
                 getline(cin, text);
 
@@ -105,7 +106,8 @@ int main() {
                 break;
             }
 
-            case 2: {
+            case 2: 
+            {
                 cout << "\nENTER ENCRYPTED TEXT: ";
                 getline(cin, text);
 
@@ -113,11 +115,10 @@ int main() {
                 cin >> key;
 
                 string decrypted = decrypt(text, key);
-
-                // split using '|'
                 int pos = decrypted.find('|');
 
-                if (pos == string::npos) {
+                if (pos == string::npos) 
+                {
                     cout << "\nINVALID FORMAT\n";
                     break;
                 }
@@ -127,10 +128,13 @@ int main() {
 
                 long long newHash = Hash(original);
 
-                if (receivedHash == newHash) {
+                if (receivedHash == newHash) 
+                {
                     cout << "\nHASH VERIFIED\n";
                     cout << "DECRYPTED TEXT: " << original << endl;
-                } else {
+                } 
+                else 
+                {
                     cout << "\nHASH MISMATCH! DATA TAMPERED\n";
                 }
 
