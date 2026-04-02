@@ -56,99 +56,100 @@ Steps:
 2. Choose option 2 → Enter encrypted text and key → system verifies hash and decrypts
 
 ---
-## Worked Examples (Correct Flow)
+## Worked Examples (Using Key = 4)
 
 ---
 
 ### Example 1
 
 **Plaintext (M):** Anunav22
-**Key:** 314
 
 ---
 
-### Step 1: Compute Hash on Plaintext
+### Step 1: Compute Hash
 
-Using polynomial rolling hash (p = 13):
-
-| Step | Char | ASCII | Calculation       | Hash      |
-| ---- | ---- | ----- | ----------------- | --------- |
-| 1    | A    | 65    | 0×13 + 65         | 65        |
-| 2    | n    | 110   | 65×13 + 110       | 955       |
-| 3    | u    | 117   | 955×13 + 117      | 12432     |
-| 4    | n    | 110   | 12432×13 + 110    | 161726    |
-| 5    | a    | 97    | 161726×13 + 97    | 2102535   |
-| 6    | v    | 118   | 2102535×13 + 118  | 27333073  |
-| 7    | 2    | 50    | 27333073×13 + 50  | 355329999 |
-| 8    | 2    | 50    | 355329999×13 + 50 | 619289987 |
-
-**H(M) = 619289987**
+H(M) = 619289987
 
 ---
 
 ### Step 2: Concatenate
 
 ```
-M || H(M)
 Anunav22 | 619289987
 ```
 
 ---
 
-### Step 3: Encryption (Gronsfeld Cipher)
+### Step 3: Encryption (Key = 4)
 
-| Character | A | n | u | n | a | v | 2 | 2 | | | 6 | 1 | 9 | 2 | 8 | 9 | 9 | 8 | 7 |
-| --------- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
-| Key       | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 | - | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 | 4 |
-| Result    | D | o | y | q | b | z | 5 | 3 | | | 9 | 2 | 3 | 5 | 9 | 3 | 2 | 9 | 1 |
+```
+A → E  
+n → r  
+u → y  
+n → r  
+a → e  
+v → z  
+2 → 6  
+2 → 6  
+| → |  
+6 → 0  
+1 → 5  
+9 → 3  
+2 → 6  
+8 → 2  
+9 → 3  
+9 → 3  
+8 → 2  
+7 → 1  
 
-**Encrypted Text:** `Doyqbz53|923593291`
-
+Encrypted Text: Eryrez66|053623321
+```
 
 ---
 
 ### Example 2
 
 **Plaintext (M):** 13anu15
-**Key:** 23
 
 ---
 
-### Step 1: Compute Hash on Plaintext
+### Step 1: Compute Hash
 
-| Step | Char | ASCII | Calculation      | Hash      |
-| ---- | ---- | ----- | ---------------- | --------- |
-| 1    | 1    | 49    | 0×13 + 49        | 49        |
-| 2    | 3    | 51    | 49×13 + 51       | 688       |
-| 3    | a    | 97    | 688×13 + 97      | 9041      |
-| 4    | n    | 110   | 9041×13 + 110    | 117643    |
-| 5    | u    | 117   | 117643×13 + 117  | 1529476   |
-| 6    | 1    | 49    | 1529476×13 + 49  | 19883137  |
-| 7    | 5    | 53    | 19883137×13 + 53 | 258480834 |
-
-**H(M) = 258480834**
+H(M) = 258480834
 
 ---
 
 ### Step 2: Concatenate
 
 ```
-M || H(M)
-Anunav22 | 619289987
+13anu15 | 258480834
 ```
 
 ---
 
-### Step 3: Encryption (Gronsfeld Cipher)
+### Step 3: Encryption (Key = 4)
 
-| Character | A | n | u | n | a | v | 2 | 2 | | | 6 | 1 | 9 | 2 | 8 | 9 | 9 | 8 | 7 |
-| --------- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
-| Key       | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 | - | 3 | 1 | 4 | 3 | 1 | 4 | 3 | 1 | 4 |
-| Result    | D | o | y | q | b | z | 5 | 3 | | | 9 | 2 | 3 | 5 | 9 | 3 | 2 | 9 | 1 |
+```
+1 → 5  
+3 → 7  
+a → e  
+n → r  
+u → y  
+1 → 5  
+5 → 9  
+| → |  
+2 → 6  
+5 → 9  
+8 → 2  
+4 → 8  
+8 → 2  
+0 → 4  
+8 → 2  
+3 → 7  
+4 → 8  
 
-**Encrypted Text:** `Doyqbz53|923593291`
-
-
+Encrypted Text: 57ery59|692824278
+```
 ---
 
 ---
