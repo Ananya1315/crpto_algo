@@ -104,29 +104,29 @@ Step 2: Concatenate
 
 Step 3: Encryption
 
-1 → 5
-3 → 7
-a → e
-n → r
-u → y
-1 → 5
-5 → 9
-| → |
-2 → 6
-5 → 9
-8 → 2
-4 → 8
-8 → 2
-2 → 6
-1 → 5
-3 → 7
-4 → 8
+1 → 5    
+3 → 7  
+a → e  
+n → r  
+u → y  
+1 → 5  
+5 → 9  
+| → |  
+2 → 6  
+5 → 9  
+8 → 2  
+4 → 8  
+8 → 2  
+2 → 6  
+1 → 5  
+3 → 7  
+4 → 8  
 
 Encrypted Text: 57ery59|692826578
 
 ---
 
-## Decryption Procedure (Short)
+## Decryption Procedure 
 
 1. Input ciphertext and key
 2. Decrypt using Gronsfeld cipher
@@ -148,7 +148,7 @@ The polynomial rolling hash is chosen because:
 
 ---
 
-## Message Authentication Flow
+## Message Authentication Flow(TYPE A)
 
 M → H(M) → M || H(M) → Encrypt → Decrypt → Split → Verify
 
