@@ -5,7 +5,7 @@ using namespace std;
 long long Hash(string text) 
 {
     long long h = 0;
-    int p = 31;
+    int p = 13;
     int mod = 1e9 + 7;
 
     for (char c : text) 
