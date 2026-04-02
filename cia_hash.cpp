@@ -96,7 +96,7 @@ int main() {
 
                 long long h = Hash(text);
 
-                // concatenate M + "|" + hash
+                cout << "CALCULATED HASH (H(M)): " << h << endl;
                 string combined = text + "|" + to_string(h);
 
                 string encrypted = encrypt(combined, key);
