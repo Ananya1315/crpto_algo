@@ -47,7 +47,6 @@ This hash is concatenated with the message before encryption to ensure **data in
 ```bash
 g++ cia_hash.cpp 
 ./a.exe(in windows)
-./a.out(in linux and mac)
 ```
 
 Steps:
